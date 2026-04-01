@@ -60,11 +60,12 @@
                         <a class="nav-link" href="#">챔피언</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">다운로드</a>
+                        <a class="nav-link" href="main_page_sub/download.html">다운로드</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">로그인</a>
-                    </li> <li class="nav-item dropdown">
+                    </li> 
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             외부 웹사이트
                         </a>
@@ -96,50 +97,22 @@
         </div>
 
         <h2 class="text-center accent-purple fw-bold mb-4">챔피언 선택</h2>
-        <div class="row rowcols-auto g-4">
+        <div class="row row-cols-auto g-4">
             
-          <!-- <div class="col-6 col-md-3">
-                <div class="card h-100">
+            <div class="col-6 col-md-3">
+                <div class="card bg-dark text-white border-secondary h-100">
                     <img src="https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/Aatrox.png" class="card-img-top" alt="아트록스">
-                    <div class="card-body d-flex flex-column text-center">
-                        <h5 class="card-title fw-bold">아트록스</h5>
-                        <p class="card-text small text-secondary mb-3 flex-grow-1">어둠의 검으로 적을 베세요.</p>
-                        <button class="btn btn-primary btn-sm w-100 mt-auto">선택하기</button>
+                    <div class="card-body">
+                        <h5 class="card-title">아트록스 (Aatrox)</h5>
+                        <p class="card-text small">역할: 전사 / 난이도: 상</p>
+                    </div>
+                    <div class="card-footer bg-transparent border-0">
+                        <button class="btn btn-outline-light w-100" data-bs-toggle="modal" data-bs-target="#modalAatrox" data-champ="Aatrox">
+                            상세 보기
+                        </button>
                     </div>
                 </div>
-                
-            </div>   -->
-            <div class="col">
-<div class="card bg-dark text-white border-secondary h-100">
-    <img src="https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/Aatrox.png class="card-img-top" alt="아트록스">
-    <div class="card-body">
-    <h5 class="card-title">아트록스 (Aatrox)</h5>
-    <p class="card-text small">역할: 전사 / 난이도: 상</p>
-    </div>
-    <div class="card-footer bg-transparent border-0">
-    <button class="btn btn-outline-light w-100"
-        data-bs-toggle="modal"
-        data-bs-target="#modalAatrox"
-        data-champ="Aatrox">
-        상세 보기
-        
-        
-    </button>
-    
-    </div>
-</div>
-
-</div>
-<!-- 모달 (iframe으로 Aatrox.html 불러오기) -->
-<div class="modal fade" id="modalAatrox" tabindex="-1" aria-labelledby="modalAatroxLabel" aria-hidden="true">
-<div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-<div class="modal-content bg-dark text-white border-secondary">
-<!-- 헤더 -->
-<div class="modal-header border-secondary">
-<h5 class="modal-title" id="modalAatroxLabel">아트록스 (Aatrox) 상세 정보</h5>
-<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-</div>
-
+            </div>
 
             <div class="col-6 col-md-3">
                 <div class="card h-100">
@@ -174,6 +147,32 @@
                 </div>
             </div>
 
+        </div> </div> <div class="modal fade" id="modalAatrox" tabindex="-1" aria-labelledby="modalAatroxLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content bg-dark text-white border-secondary">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title" id="modalAatroxLabel">아트록스 (Aatrox) 상세 정보</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- 바디: iframe으로 내용 채움 -->
+                    <div class="modal-body p-0" style="height: 65vh; background: #0a0e17;">
+                    <iframe
+                    src="modals/Aatrox.html"
+                    frameborder="0"
+                    style="width: 100%; height: 100%; border: none;"
+                    allowfullscreen>
+                    </iframe>
+                </div>
+<!-- 푸터 -->
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">닫기</button>
+                </div>
+                </div>
+            </div>
+            </div>
+                </div>
+            </div>
         </div>
     </div>
 
