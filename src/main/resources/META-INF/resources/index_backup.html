@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,47 +12,158 @@
             color: #fff;
             font-family: 'Pretendard', 'Malgun Gothic', sans-serif;
         }
-        .accent-purple { color: #a020f0; }
-        .bg-custom-dark { background-color: #121825 !important; }
+
+        .accent-purple {
+            color: #a020f0;
+        }
+
+        .bg-custom-dark {
+            background-color: #121825 !important;
+        }
+
         .card {
             background-color: #1e1e1e;
             border: 1px solid #2a3241;
             color: white;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(160, 32, 240, 0.2); }
-        .btn-primary { background-color: #a020f0; border: none; }
-        .btn-primary:hover { background-color: #8a1bc2; }
-        .hero-section { padding: 4rem 0 2rem 0; }
-        .search-result-card { background: #fff; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 12px; }
-        .search-result-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .search-result-card img { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; margin-right: 12px; }
-        .no-result { text-align: center; padding: 40px 20px; color: #666; }
-        .search-category-item { padding: 8px 16px; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s ease; }
-        .search-category-item.active { border-bottom-color: #a020f0; color: #a020f0; font-weight: bold; }
-        
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(160, 32, 240, 0.2);
+        }
+
+        .btn-primary {
+            background-color: #a020f0;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #8a1bc2;
+        }
+
+        .hero-section {
+            padding: 4rem 0 2rem 0;
+        }
+
+        .search-result-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .search-result-card:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-result-card img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 12px;
+        }
+
+        .no-result {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+        }
+
+        .search-category-item {
+            padding: 8px 16px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .search-category-item.active {
+            border-bottom-color: #a020f0;
+            color: #a020f0;
+            font-weight: bold;
+        }
+
         /* ===== 라이트 테마 ===== */
-        body.light-theme { background-color: #f0f2f5; color: #1a1a2e; }
-        body.light-theme .navbar { background-color: #6c757d !important; }
-        body.light-theme .card { background-color: #ffffff; border-color: #dee2e6; color: #1a1a2e; }
-        body.light-theme .card:hover { box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
-        body.light-theme .bg-custom-dark, body.light-theme .hero-section { background-color: #ffffff !important; }
-        body.light-theme .text-secondary { color: #6c757d !important; }
-        body.light-theme .dropdown-menu { background-color: #ffffff; border-color: #dee2e6; }
-        body.light-theme .dropdown-item { color: #1a1a2e; }
-        body.light-theme .dropdown-item:hover { background-color: #f0f2f5; color: #a020f0; }
-        body.light-theme .modal-content { background-color: #ffffff !important; color: #1a1a2e; }
-        body.light-theme .modal-header, body.light-theme .modal-footer { border-color: #dee2e6 !important; }
-        body.light-theme .search-result-card { background: #ffffff; border: 1px solid #dee2e6; }
-        body.light-theme .nav-link { color: rgba(255,255,255,0.8) !important; }
-        body.light-theme .nav-link:hover, body.light-theme .nav-link.active { color: #ffffff !important; }
-        body.light-theme .btn-outline-light { color: #1a1a2e; border-color: #dee2e6; }
-        body.light-theme .btn-outline-light:hover { background-color: #f0f2f5; }
-        
+        body.light-theme {
+            background-color: #f0f2f5;
+            color: #1a1a2e;
+        }
+
+        body.light-theme .navbar {
+            background-color: #6c757d !important;
+        }
+
+        body.light-theme .card {
+            background-color: #ffffff;
+            border-color: #dee2e6;
+            color: #1a1a2e;
+        }
+
+        body.light-theme .card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        body.light-theme .bg-custom-dark,
+        body.light-theme .hero-section {
+            background-color: #ffffff !important;
+        }
+
+        body.light-theme .text-secondary {
+            color: #6c757d !important;
+        }
+
+        body.light-theme .dropdown-menu {
+            background-color: #ffffff;
+            border-color: #dee2e6;
+        }
+
+        body.light-theme .dropdown-item {
+            color: #1a1a2e;
+        }
+
+        body.light-theme .dropdown-item:hover {
+            background-color: #f0f2f5;
+            color: #a020f0;
+        }
+
+        body.light-theme .modal-content {
+            background-color: #ffffff !important;
+            color: #1a1a2e;
+        }
+
+        body.light-theme .modal-header,
+        body.light-theme .modal-footer {
+            border-color: #dee2e6 !important;
+        }
+
+        body.light-theme .search-result-card {
+            background: #ffffff;
+            border: 1px solid #dee2e6;
+        }
+
+        body.light-theme .nav-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        body.light-theme .nav-link:hover,
+        body.light-theme .nav-link.active {
+            color: #ffffff !important;
+        }
+
+        body.light-theme .btn-outline-light {
+            color: #1a1a2e;
+            border-color: #dee2e6;
+        }
+
+        body.light-theme .btn-outline-light:hover {
+            background-color: #f0f2f5;
+        }
+
         /* ===== 테마 토글 버튼 ===== */
         .theme-toggle-btn {
             background: transparent;
-            border: 2px solid rgba(255,255,255,0.5);
+            border: 2px solid rgba(255, 255, 255, 0.5);
             color: #fff;
             padding: 5px 14px;
             border-radius: 20px;
@@ -60,16 +172,29 @@
             transition: all 0.3s ease;
             cursor: pointer;
         }
-        .theme-toggle-btn:hover { background: rgba(255,255,255,0.15); border-color: #fff; }
-        body.light-theme .theme-toggle-btn { border-color: rgba(0,0,0,0.3); color: #1a1a2e; }
-        body.light-theme .theme-toggle-btn:hover { background: rgba(0,0,0,0.05); }
+
+        .theme-toggle-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #fff;
+        }
+
+        body.light-theme .theme-toggle-btn {
+            border-color: rgba(0, 0, 0, 0.3);
+            color: #1a1a2e;
+        }
+
+        body.light-theme .theme-toggle-btn:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
     </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand accent-purple fw-bold" href="#">League of Legends</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -84,7 +209,9 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">공식 사이트</a></li>
                             <li><a class="dropdown-item" href="#">롤 전적 검색</a></li>
-                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item" href="#">관련 유튜브</a></li>
                         </ul>
                     </li>
@@ -103,29 +230,62 @@
             <h1 class="display-4 fw-bold">리그오브레전드</h1>
             <p class="lead text-secondary">최고의 팀과 함께하는 5v5 MOBA</p>
         </div>
-        
+
         <div class="bg-custom-dark p-4 rounded-3 mb-5 border border-secondary border-opacity-25">
-            <h3 class="accent-purple h5 mb-3">오늘의 인기 챔피언: 신챔프 공개</h3>
-            <p class="mb-0 text-light opacity-75">리그오브레전드 신챔프가공개됩니다. 다양한 스킨과 함께하세요!</p>
+            <h3 class="accent-purple h5 mb-3">오늘의 인기 챔피언 공개</h3>
+            <p class="mb-0 text-light opacity-75">리그오브레전드 신챔프가 공개됩니다. 다양한 스킨과 함께하세요!</p>
         </div>
+
+        <section id="searchResults">
+            <div class="search-keyword-header">
+                <h1 id="searchKeywordDisplay"></h1>
+            </div>
+            <div class="search-body">
+                <div class="container-fluid px-0">
+                    <div class="row g-0">
+                        <div class="col-md-3 col-lg-2 search-sidebar bg-white py-4">
+                            <div class="px-3 mb-3" style="font-size:0.8rem; color:#999; text-transform:uppercase;">카테고리
+                            </div>
+                            <div class="search-category-item active" onclick="switchCategory('champion', this)">챔피언
+                                <span class="count" id="champCount">(0)</span></div>
+                            <div class="search-category-item" onclick="switchCategory('news', this)">뉴스 <span
+                                    class="count" id="newsCount">(0)</span></div>
+                        </div>
+                        <div class="col-md-9 col-lg-10 search-content-area">
+                            <div id="resultChampion">
+                                <h5 class="mb-4" style="color:#333;">챔피언</h5>
+                                <div id="championResultList"></div>
+                            </div>
+                            <div id="resultNews" style="display:none;">
+                                <h5 class="mb-4" style="color:#333;">뉴스</h5>
+                                <div id="newsResultList"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <h2 class="text-center accent-purple fw-bold mb-4">챔피언 선택</h2>
         <div class="row row-cols-auto g-4">
             <div class="col-6 col-md-3">
                 <div class="card bg-dark text-white border-secondary h-100">
-                    <img src="https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/Aatrox.png" class="card-img-top" alt="아트록스">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/Aatrox.png"
+                        class="card-img-top" alt="아트록스">
                     <div class="card-body">
                         <h5 class="card-title">아트록스 (Aatrox)</h5>
                         <p class="card-text small">역할: 전사 / 난이도: 상</p>
                     </div>
                     <div class="card-footer bg-transparent border-0">
-                        <button class="btn btn-outline-light w-100" data-bs-toggle="modal" data-bs-target="#modalAatrox">상세 보기</button>
+                        <button class="btn btn-outline-light w-100" data-bs-toggle="modal"
+                            data-bs-target="#modalAatrox">상세 보기</button>
                     </div>
                 </div>
             </div>
             <div class="col-6 col-md-3">
                 <div class="card h-100">
-                    <img src="https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/Garen.png" class="card-img-top" alt="가렌">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/Garen.png"
+                        class="card-img-top" alt="가렌">
                     <div class="card-body d-flex flex-column text-center">
                         <h5 class="card-title fw-bold">가렌</h5>
                         <p class="card-text small text-secondary mb-3 flex-grow-1">데마시아의 힘을 보여주세요.</p>
@@ -135,7 +295,8 @@
             </div>
             <div class="col-6 col-md-3">
                 <div class="card h-100">
-                    <img src="https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/Ashe.png" class="card-img-top" alt="애쉬">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/Ashe.png" class="card-img-top"
+                        alt="애쉬">
                     <div class="card-body d-flex flex-column text-center">
                         <h5 class="card-title fw-bold">애쉬</h5>
                         <p class="card-text small text-secondary mb-3 flex-grow-1">서리의 화살로 적을 꿰뚫으세요.</p>
@@ -145,7 +306,8 @@
             </div>
             <div class="col-6 col-md-3">
                 <div class="card h-100">
-                    <img src="https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/Leblanc.png" class="card-img-top" alt="르블랑">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/Leblanc.png"
+                        class="card-img-top" alt="르블랑">
                     <div class="card-body d-flex flex-column text-center">
                         <h5 class="card-title fw-bold">르블랑</h5>
                         <p class="card-text small text-secondary mb-3 flex-grow-1">환술로 적을 교란하세요.</p>
@@ -164,7 +326,8 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body p-0" style="height: 65vh; background: #0a0e17;">
-                    <iframe src="modals/Aatrox.html" frameborder="0" style="width: 100%; height: 100%; border: none;"></iframe>
+                    <iframe src="modals/Aatrox.html" frameborder="0"
+                        style="width: 100%; height: 100%; border: none;"></iframe>
                 </div>
                 <div class="modal-footer border-secondary">
                     <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">닫기</button>
@@ -189,7 +352,7 @@
                 localStorage.setItem('theme', 'light');
             }
         }
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme === 'light') {
                 document.body.classList.add('light-theme');
@@ -198,4 +361,5 @@
         });
     </script>
 </body>
+
 </html>
