@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>League of Legends - 챔피언 선택</title>
+    <title>League of Legends - 로그인 후 메인</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
         body {
             background-color: #0a0e17;
@@ -46,121 +48,14 @@
             padding: 4rem 0 2rem 0;
         }
 
-        .search-result-card {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            margin-bottom: 12px;
+        .login-success-box {
+            background-color: #121825;
+            border: 1px solid #2a3241;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 32px;
         }
 
-        .search-result-card:hover {
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .search-result-card img {
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: 4px;
-            margin-right: 12px;
-        }
-
-        .no-result {
-            text-align: center;
-            padding: 40px 20px;
-            color: #666;
-        }
-
-        .search-category-item {
-            padding: 8px 16px;
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
-            transition: all 0.2s ease;
-        }
-
-        .search-category-item.active {
-            border-bottom-color: #a020f0;
-            color: #a020f0;
-            font-weight: bold;
-        }
-
-        /* ===== 라이트 테마 ===== */
-        body.light-theme {
-            background-color: #f0f2f5;
-            color: #1a1a2e;
-        }
-
-        body.light-theme .navbar {
-            background-color: #6c757d !important;
-        }
-
-        body.light-theme .card {
-            background-color: #ffffff;
-            border-color: #dee2e6;
-            color: #1a1a2e;
-        }
-
-        body.light-theme .card:hover {
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        body.light-theme .bg-custom-dark,
-        body.light-theme .hero-section {
-            background-color: #ffffff !important;
-        }
-
-        body.light-theme .text-secondary {
-            color: #6c757d !important;
-        }
-
-        body.light-theme .dropdown-menu {
-            background-color: #ffffff;
-            border-color: #dee2e6;
-        }
-
-        body.light-theme .dropdown-item {
-            color: #1a1a2e;
-        }
-
-        body.light-theme .dropdown-item:hover {
-            background-color: #f0f2f5;
-            color: #a020f0;
-        }
-
-        body.light-theme .modal-content {
-            background-color: #ffffff !important;
-            color: #1a1a2e;
-        }
-
-        body.light-theme .modal-header,
-        body.light-theme .modal-footer {
-            border-color: #dee2e6 !important;
-        }
-
-        body.light-theme .search-result-card {
-            background: #ffffff;
-            border: 1px solid #dee2e6;
-        }
-
-        body.light-theme .nav-link {
-            color: rgba(255, 255, 255, 0.8) !important;
-        }
-
-        body.light-theme .nav-link:hover,
-        body.light-theme .nav-link.active {
-            color: #ffffff !important;
-        }
-
-        body.light-theme .btn-outline-light {
-            color: #1a1a2e;
-            border-color: #dee2e6;
-        }
-
-        body.light-theme .btn-outline-light:hover {
-            background-color: #f0f2f5;
-        }
-
-        /* ===== 테마 토글 버튼 ===== */
         .theme-toggle-btn {
             background: transparent;
             border: 2px solid rgba(255, 255, 255, 0.5);
@@ -178,34 +73,85 @@
             border-color: #fff;
         }
 
+        body.light-theme {
+            background-color: #f0f2f5;
+            color: #1a1a2e;
+        }
+
+        body.light-theme .navbar {
+            background-color: #6c757d !important;
+        }
+
+        body.light-theme .card {
+            background-color: #ffffff;
+            border-color: #dee2e6;
+            color: #1a1a2e;
+        }
+
+        body.light-theme .bg-custom-dark,
+        body.light-theme .hero-section,
+        body.light-theme .login-success-box {
+            background-color: #ffffff !important;
+            color: #1a1a2e;
+        }
+
+        body.light-theme .text-secondary {
+            color: #6c757d !important;
+        }
+
         body.light-theme .theme-toggle-btn {
             border-color: rgba(0, 0, 0, 0.3);
             color: #1a1a2e;
         }
 
-        body.light-theme .theme-toggle-btn:hover {
-            background: rgba(0, 0, 0, 0.05);
+        body.light-theme .btn-outline-light {
+            color: #1a1a2e;
+            border-color: #6c757d;
+        }
+
+        body.light-theme .btn-outline-light:hover {
+            background-color: #e9ecef;
         }
     </style>
 </head>
 
 <body>
+    <!-- 네비바 -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand accent-purple fw-bold" href="#">League of Legends</a>
+            <a class="navbar-brand accent-purple fw-bold" href="/">League of Legends</a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="#">리그옵</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">뉴스</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">챔피언</a></li>
-                    <li class="nav-item"><a class="nav-link" href="main_page_sub/download.html">다운로드</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Login/login.html">로그인</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">리그옵</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">뉴스</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/champions">챔피언</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/main_page_sub/download.html">다운로드</a>
+                    </li>
+
+                    <!-- 로그인 후에는 로그인 버튼 대신 로그아웃 -->
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-danger btn-sm px-3 ms-2" href="/logout">
+                            로그아웃
+                        </a>
+                    </li>
+
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">외부 웹사이트</a>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            외부 웹사이트
+                        </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">공식 사이트</a></li>
                             <li><a class="dropdown-item" href="#">롤 전적 검색</a></li>
@@ -216,10 +162,12 @@
                         </ul>
                     </li>
                 </ul>
+
                 <form class="d-flex" role="search" id="searchForm">
-                    <input class="form-control me-2" type="search" placeholder="Search" id="searchInput" />
+                    <input class="form-control me-2" type="search" placeholder="Search" id="searchInput">
                     <button class="btn btn-outline-success" type="submit">검색</button>
                 </form>
+
                 <button class="btn theme-toggle-btn ms-2" id="themeToggleBtn" onclick="toggleTheme()">DARK</button>
             </div>
         </div>
@@ -228,89 +176,82 @@
     <div class="container mb-5">
         <div class="hero-section text-center">
             <h1 class="display-4 fw-bold">리그오브레전드</h1>
-            <p class="lead text-secondary">최고의 팀과 함께하는 5v5 MOBA</p>
+            <p class="lead text-secondary">로그인 성공! 이제 챔피언 정보를 확인할 수 있습니다.</p>
+        </div>
+
+        <div class="login-success-box text-center">
+            <h3 class="accent-purple fw-bold mb-3">환영합니다, 소환사님</h3>
+            <p class="mb-3 text-light opacity-75">
+                로그인 세션이 정상적으로 저장되었습니다.
+            </p>
+            <a href="/champions" class="btn btn-primary me-2">챔피언 목록 보기</a>
+            <a href="/logout" class="btn btn-outline-light">로그아웃</a>
         </div>
 
         <div class="bg-custom-dark p-4 rounded-3 mb-5 border border-secondary border-opacity-25">
             <h3 class="accent-purple h5 mb-3">오늘의 인기 챔피언: 신챔프 공개</h3>
-            <p class="mb-0 text-light opacity-75">리그오브레전드 신챔프가공개됩니다. 다양한 스킨과 함께하세요!</p>
+            <p class="mb-0 text-light opacity-75">
+                리그오브레전드 신챔프가 공개됩니다. 다양한 스킨과 함께하세요!
+            </p>
         </div>
 
-        <section id="searchResults">
-            <div class="search-keyword-header">
-                <h1 id="searchKeywordDisplay"></h1>
-            </div>
-            <div class="search-body">
-                <div class="container-fluid px-0">
-                    <div class="row g-0">
-                        <div class="col-md-3 col-lg-2 search-sidebar bg-white py-4">
-                            <div class="px-3 mb-3" style="font-size:0.8rem; color:#999; text-transform:uppercase;">카테고리
-                            </div>
-                            <div class="search-category-item active" onclick="switchCategory('champion', this)">챔피언
-                                <span class="count" id="champCount">(0)</span></div>
-                            <div class="search-category-item" onclick="switchCategory('news', this)">뉴스 <span
-                                    class="count" id="newsCount">(0)</span></div>
-                        </div>
-                        <div class="col-md-9 col-lg-10 search-content-area">
-                            <div id="resultChampion">
-                                <h5 class="mb-4" style="color:#333;">챔피언</h5>
-                                <div id="championResultList"></div>
-                            </div>
-                            <div id="resultNews" style="display:none;">
-                                <h5 class="mb-4" style="color:#333;">뉴스</h5>
-                                <div id="newsResultList"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <h2 class="text-center accent-purple fw-bold mb-4">챔피언 선택</h2>
-        <div class="row row-cols-auto g-4">
+
+        <div class="row row-cols-auto g-4 justify-content-center">
             <div class="col-6 col-md-3">
                 <div class="card bg-dark text-white border-secondary h-100">
                     <img src="https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/Aatrox.png"
                         class="card-img-top" alt="아트록스">
                     <div class="card-body">
-                        <h5 class="card-title">아트록스 (Aatrox)</h5>
-                        <p class="card-text small">역할: 전사 / 난이도: 상</p>
+                        <h5 class="card-title">아트록스</h5>
+                        <p class="card-text small">역할: 전사 / 라인: 탑</p>
                     </div>
                     <div class="card-footer bg-transparent border-0">
                         <button class="btn btn-outline-light w-100" data-bs-toggle="modal"
-                            data-bs-target="#modalAatrox">상세 보기</button>
+                            data-bs-target="#modalAatrox">
+                            상세 보기
+                        </button>
                     </div>
                 </div>
             </div>
+
             <div class="col-6 col-md-3">
                 <div class="card h-100">
                     <img src="https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/Garen.png"
                         class="card-img-top" alt="가렌">
                     <div class="card-body d-flex flex-column text-center">
                         <h5 class="card-title fw-bold">가렌</h5>
-                        <p class="card-text small text-secondary mb-3 flex-grow-1">데마시아의 힘을 보여주세요.</p>
+                        <p class="card-text small text-secondary mb-3 flex-grow-1">
+                            데마시아의 힘을 보여주세요.
+                        </p>
                         <button class="btn btn-primary btn-sm w-100 mt-auto">선택하기</button>
                     </div>
                 </div>
             </div>
+
             <div class="col-6 col-md-3">
                 <div class="card h-100">
-                    <img src="https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/Ashe.png" class="card-img-top"
-                        alt="애쉬">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/Ashe.png"
+                        class="card-img-top" alt="애쉬">
                     <div class="card-body d-flex flex-column text-center">
                         <h5 class="card-title fw-bold">애쉬</h5>
-                        <p class="card-text small text-secondary mb-3 flex-grow-1">서리의 화살로 적을 꿰뚫으세요.</p>
+                        <p class="card-text small text-secondary mb-3 flex-grow-1">
+                            서리의 화살로 적을 꿰뚫으세요.
+                        </p>
                         <button class="btn btn-primary btn-sm w-100 mt-auto">선택하기</button>
                     </div>
                 </div>
             </div>
+
             <div class="col-6 col-md-3">
                 <div class="card h-100">
                     <img src="https://ddragon.leagueoflegends.com/cdn/14.5.1/img/champion/Leblanc.png"
                         class="card-img-top" alt="르블랑">
                     <div class="card-body d-flex flex-column text-center">
                         <h5 class="card-title fw-bold">르블랑</h5>
-                        <p class="card-text small text-secondary mb-3 flex-grow-1">환술로 적을 교란하세요.</p>
+                        <p class="card-text small text-secondary mb-3 flex-grow-1">
+                            환술로 적을 교란하세요.
+                        </p>
                         <button class="btn btn-primary btn-sm w-100 mt-auto">선택하기</button>
                     </div>
                 </div>
@@ -318,17 +259,20 @@
         </div>
     </div>
 
+    <!-- 아트록스 모달 -->
     <div class="modal fade" id="modalAatrox" tabindex="-1">
         <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content bg-dark text-white border-secondary">
                 <div class="modal-header border-secondary">
-                    <h5 class="modal-title">아트록스 (Aatrox) 상세 정보</h5>
+                    <h5 class="modal-title">아트록스 상세 정보</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
+
                 <div class="modal-body p-0" style="height: 65vh; background: #0a0e17;">
-                    <iframe src="modals/Aatrox.html" frameborder="0"
+                    <iframe src="/modals/Aatrox.html" frameborder="0"
                         style="width: 100%; height: 100%; border: none;"></iframe>
                 </div>
+
                 <div class="modal-footer border-secondary">
                     <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">닫기</button>
                 </div>
@@ -336,12 +280,14 @@
         </div>
     </div>
 
-    <script src="search.js"></script>
+    <script src="/search.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
         function toggleTheme() {
             const body = document.body;
             const btn = document.getElementById('themeToggleBtn');
+
             if (body.classList.contains('light-theme')) {
                 body.classList.remove('light-theme');
                 btn.textContent = 'DARK';
@@ -352,8 +298,10 @@
                 localStorage.setItem('theme', 'light');
             }
         }
+
         document.addEventListener('DOMContentLoaded', function () {
             const savedTheme = localStorage.getItem('theme');
+
             if (savedTheme === 'light') {
                 document.body.classList.add('light-theme');
                 document.getElementById('themeToggleBtn').textContent = 'LIGHT';
