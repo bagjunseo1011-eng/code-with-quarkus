@@ -29,7 +29,7 @@ n.title.toLowerCase().includes(q) || n.desc.toLowerCase().includes(q) || n.categ
 );
 document.getElementById('champCount').textContent = `(${champResults.length})`; // 검색 결과 개수를 카운트 영역에 표시
 document.getElementById('newsCount').textContent = `(${newsResults.length})`;
-const champList = document.getElementById('championResultList’); // 검색 결과 없는 경우, 있으면 카드형태 출력
+const champList = document.getElementById('championResultList'); // 검색 결과 없는 경우, 있으면 카드형태 출력
 if (champResults.length === 0) {
 champList.innerHTML = `<div class="no-result"><h4>검색 결과 없음</h4><p>"${query}"에 해당하는 챔피언이 없습니다.</p></div>`;
 } else {
@@ -44,7 +44,7 @@ champList.innerHTML = champResults.map(c => `
 `).join('');
 }
 
-const newsList = document.getElementById('newsResultList’); // 검색 결과 없는 경우, 있으면 카드형태 출력
+const newsList = document.getElementById('newsResultList'); // 검색 결과 없는 경우, 있으면 카드형태 출력
 if (newsResults.length === 0) {
 newsList.innerHTML = `<div class="no-result"><h4>검색 결과 없음</h4><p>"${query}"에 해당하는 뉴스가 없습니다.</p></div>`;
 } else {
@@ -56,9 +56,9 @@ newsList.innerHTML = newsResults.map(n => `
 </div>
 `).join('');
 }
-switchCategory('champion', document.querySelector('.search-category-item’)); // 챔피온 탭이 먼저 보임
-document.querySelector('.hero').classList.add('d-none’); // 히어로 섹션 숨김
-document.querySelectorAll('section:not(#searchResults)').forEach(s => s.classList.add('d-none’)); // 나머지 섹션 숨김
-document.getElementById('searchResults').classList.remove('d-none’); // 기타 섹션까지 숨김
-document.getElementById('searchResults').style.display = 'block’; // 결과 섹션만 출력
+switchCategory('champion', document.querySelector('.search-category-item')); // 챔피온 탭이 먼저 보임
+document.querySelector('.hero').classList.add('d-none'); // 히어로 섹션 숨김
+document.querySelectorAll('section:not(#searchResults)').forEach(s => s.classList.add('d-none')); // 나머지 섹션 숨김
+document.getElementById('searchResults').classList.remove('d-none'); // 기타 섹션까지 숨김
+document.getElementById('searchResults').style.display = 'block'; // 결과 섹션만 출력
 }
