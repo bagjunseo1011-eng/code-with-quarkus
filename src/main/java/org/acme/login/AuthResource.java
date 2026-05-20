@@ -14,6 +14,9 @@ import jakarta.ws.rs.core.Response;
 
 import java.io.InputStream;
 import java.net.URI;
+import java.util.Map;
+
+import org.jboss.resteasy.reactive.RestForm;
 
 @Path("/")
 public class AuthResource {
@@ -96,9 +99,15 @@ public class AuthResource {
     @Produces(MediaType.TEXT_HTML)
     public Response registerPage() {
         InputStream html = getClass()
-            .getClassLoader()
-            .getResourceAsStream(
-            "META-INF/resources/login/register.html");
+                .getClassLoader()
+                .getResourceAsStream("META-INF/resources/login/register.html");
+
+        if (html == null) {
+            return Response.status(Response.Status.NOT_FOUND)
+                    .entity("register.html 파일을 찾을 수 없습니다.")
+                    .build();
+        }
+
         return Response.ok(html).build();
     }
 
@@ -139,4 +148,78 @@ public class AuthResource {
                 .seeOther(URI.create("/register_success"))
                 .build();
     }
+@GET
+@Path("/register_success")
+@Produces(MediaType.TEXT_HTML)
+public Response registerSuccess() {
+    InputStream html = getClass()
+            .getClassLoader()
+            .getResourceAsStream("META-INF/resources/login/register_success.html");
+
+    if (html == null) {
+        return Response.status(Response.Status.NOT_FOUND)
+                .entity("register_success.html 파일을 찾을 수 없습니다.")
+                .build();
+    }
+
+    return Response.ok(html).build();
+}
+    // GET / → 세션 유무에 따라 메인 페이지 분기
+    @GET
+    @Produces(MediaType.TEXT_HTML)
+    public Response mainPage() {
+        String loginUser = context.session().get("loginUser");
+        System.out.println("=== [GET /] 세션 ID : " + context.session().id());
+        System.out.println("=== [GET /] loginUser : " + loginUser);
+        String htmlPath = (loginUser != null)
+                ? "META-INF/resources/login/main_after_login.html"
+                : "META-INF/resources/main_index.html";
+        InputStream html = getClass().getClassLoader().getResourceAsStream(htmlPath);
+        return Response.ok(html).build();
+    }
+    @GET
+    @Path("/profile")
+    @Produces(MediaType.TEXT_HTML)
+    public Response profilePage() {
+        // ① 세션 체크 (로그인 안 한 사용자 차단)
+        String loginUser = context.session().get("loginUser");
+        if (loginUser == null) {
+            return Response
+                    .seeOther(URI.create("/login"))
+                    .build();
+        }
+        // ② DB에서 사용자 정보 조회
+        User user = User.findByUsername(loginUser);
+        // ③ 세션에 사용자 정보 저장 (HTML에서 활용)
+        context.session().put("userEmail", user.email);
+        context.session().put("userPhone", user.phone);
+        // ④ 프로필 페이지 반환
+        InputStream html = getClass()
+                .getClassLoader()
+                .getResourceAsStream("META-INF/resources/login/profile.html");
+        return Response.ok(html).build();
+    }
+    @GET
+@Path("/profile/info")
+@Produces(MediaType.APPLICATION_JSON)
+public Response profileInfo() {
+// 세션 체크
+String loginUser = context.session().get("loginUser");
+if (loginUser == null) {
+return Response.status(401).build();
+}
+// DB 조회
+User user = User.findByUsername(loginUser);
+// JSON 응답
+return Response.ok(
+Map.of(
+"username", user.username,
+"email", user.email != null ? user.email : "",
+"phone", user.phone != null ? user.phone : "",
+"profileImage", user.profileImage != null
+? user.profileImage : ""
+)
+).build();
+
+}
 }
